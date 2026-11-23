@@ -1,0 +1,27 @@
+{
+  "name": "WAHA Heroku",
+  "description": "WAHA (WhatsApp HTTP API) on Heroku — NOWEB (Baileys) engine. React to channel posts via REST API.",
+  "repository": "https://github.com/SY3D-ME3R/WAHA-HEROKU",
+  "env": {
+    "WHATSAPP_DEFAULT_ENGINE": {
+      "description": "WAHA engine. NOWEB = Baileys (no browser, supports channels).",
+      "value": "NOWEB"
+    },
+    "WAHA_API_KEY": {
+      "description": "API key sent as the X-Api-Key header. Keep it secret — never put it in the repo.",
+      "generator": "secret"
+    },
+    "WHATSAPP_RESTART_ALL_SESSIONS": {
+      "description": "Restart stopped sessions after a dyno restart.",
+      "value": "True"
+    },
+    "WAHA_PRINT_QR": {
+      "description": "Print QR in logs. False = pair from the dashboard instead.",
+      "value": "False"
+    }
+  },
+  "addons": [
+    { "plan": "heroku-postgresql:essential-0" },
+    { "plan": "heroku-redis:mini" }
+  ]
+}
